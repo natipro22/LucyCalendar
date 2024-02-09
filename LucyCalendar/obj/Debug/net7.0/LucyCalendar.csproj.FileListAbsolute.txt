@@ -1,0 +1,12 @@
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\bin\Debug\net7.0\LucyCalendar.deps.json
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\bin\Debug\net7.0\LucyCalendar.dll
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\bin\Debug\net7.0\LucyCalendar.pdb
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\LucyCalendar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\LucyCalendar.AssemblyInfoInputs.cache
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\LucyCalendar.AssemblyInfo.cs
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\LucyCalendar.csproj.CoreCompileInputs.cache
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\LucyCalendar.dll
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\refint\LucyCalendar.dll
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\LucyCalendar.pdb
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\ref\LucyCalendar.dll
+C:\Users\Mohammed\AngelSoftwares\LucyCalendar\LucyCalendar\obj\Debug\net7.0\LucyCalendar.csproj.AssemblyReference.cache
