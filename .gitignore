@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/LucyCalendar
+/LucyCalendar/obj
+/LucyCalendar/bin
+/ShowCase/bin
+/ShowCase/obj
