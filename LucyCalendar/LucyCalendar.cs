@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using LucyCalendar.Contracts;
 using LucyCalendar.Converters;
 using LucyCalendar.Format;
 using LucyCalendar.Validator;
 
 namespace LucyCalendar;
-public class LucyCaledar : ILucyCalendar
+public class LucyCalendar : ILucyCalendar
 {
     public DateTime DateTime { get; set; }
     public int Day { get; set; }
@@ -15,28 +15,33 @@ public class LucyCaledar : ILucyCalendar
     public int DayOfYear { get; set; }
     public int DaysInMonth { get; set; }
     public int DayOfWeek { get; set; }
+    public string Era { get => Year > 0 ? "ዓ/ም" : "ዓ/ዓ"; }
 
     private readonly IToJdnConvertor _toJdnConverter;
     private readonly IFromJdnConvertor _fromJdnConverter;
     private readonly IToJdnConvertor _ethiopianToJdn;
     private readonly IFromJdnConvertor _jdnToGregorian;
-    public LucyCaledar()
+    private readonly IFormatProvider _formatProvider;
+
+    public LucyCalendar()
     {
         
     }
 
-    // public LucyCaledar(IEthiopianToJdn ethiopianToJdn,
-    //                     IJdnToEthiopian jdnToEthiopian,
-    //                     IGregorianToJdn gregorianToJdn,
-    //                     IJdnToGregorian jdnToGregorian)
-    // {
-    //     DateTime = DateTime.Now;
-    //     _toJdnConverter = gregorianToJdn;
-    //     _fromJdnConverter = jdnToEthiopian;
-    //     _ethiopianToJdn = ethiopianToJdn;
-    //     _jdnToGregorian = jdnToGregorian;
-    //     this.Initialize();
-    // }
+    public LucyCalendar(IEthiopianToJdn ethiopianToJdn,
+                        IJdnToEthiopian jdnToEthiopian,
+                        IGregorianToJdn gregorianToJdn,
+                        IJdnToGregorian jdnToGregorian,
+                        IFormatProvider formatProvider)
+    {
+        DateTime = DateTime.Now;
+        _toJdnConverter = gregorianToJdn;
+        _fromJdnConverter = jdnToEthiopian;
+        _ethiopianToJdn = ethiopianToJdn;
+        _jdnToGregorian = jdnToGregorian;
+        this._formatProvider = formatProvider;
+        this.Initialize();
+    }
     public void Initialize()
     {
         this.UpdateComputedFields();
@@ -84,9 +89,12 @@ public class LucyCaledar : ILucyCalendar
     }
     public override string ToString()
     {
-        var formattable = DateFormat.DEFAULT;
-        var result = formattable?.Invoke(this);
-        return result!.ToString(new LucyDateFormatProvider());
+        return this.ToString(DateFormat.DEFAULT);
+    }
+    public string ToString(Func<ILucyCalendar, FormattableString> dateFormat)
+    {
+        var result = dateFormat?.Invoke(this);
+        return result!.ToString(_formatProvider);
     }
 
     public string MonthName()

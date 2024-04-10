@@ -2,8 +2,9 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/LucyCalendar
-/LucyCalendar/obj
+/.vs
 /LucyCalendar/bin
+/LucyCalendar/obj
+
 /ShowCase/bin
 /ShowCase/obj

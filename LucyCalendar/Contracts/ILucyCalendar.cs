@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace LucyCalendar.Contracts;
 
 public interface ILucyCalendar
@@ -15,10 +10,13 @@ public interface ILucyCalendar
     public int DayOfYear { get; set; }
     public int DaysInMonth { get; set; }
     public int DayOfWeek { get; set; }
+    public string Era { get; }
     DateTime ToGregorian();
     ILucyCalendar FromDateTime(DateTime dateTime);
     ILucyCalendar From(int day, int month, int year);
     string ToString();
     string MonthName();
     string WeekName();
+
+    string ToString(Func<ILucyCalendar, FormattableString> dateFormat);
 }
