@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
@@ -9,19 +9,12 @@
 	<Authors>Natnael Yirga</Authors>
 	<Description>Lucy Calendar is a powerful .NET package designed to seamlessly integrate Ethiopian calendrical functionality into your applications. With Lucy Calendar, you can effortlessly convert dates between the Gregorian and Ethiopian calendars, customize date formatting, and leverage advanced features for enhanced user experiences.</Description>
 	<PackageProjectUrl>https://github.com/natipro22/LucyCalendar</PackageProjectUrl>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<RepositoryUrl>https://github.com/natipro22/LucyCalendar</RepositoryUrl>
 	<PackageTags>lucyCalendar; dateConverter; gregoriantoEthioian; Ethiopian; EthiopianDate; toEthiopia; toEthiopian; EthiopianToGregorian; date; afrianDate; ErtrianToGregorian; toGregoriain;</PackageTags>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
@@ -34,6 +27,15 @@
 	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="GeezNet" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="nupkg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
